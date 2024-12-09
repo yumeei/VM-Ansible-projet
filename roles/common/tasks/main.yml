@@ -1,0 +1,14 @@
+- name: Update package index
+  apt:
+    update_cache: yes
+
+- name: Install common dependencies
+  apt:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - vim
+    - git
+    - wget
+    - curl
+    - software-properties-common

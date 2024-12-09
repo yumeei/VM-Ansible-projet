@@ -1,0 +1,21 @@
+- name: Install PostgreSQL
+  apt:
+    name: postgresql
+    state: present
+
+- name: Start and enable PostgreSQL
+  service:
+    name: postgresql
+    state: started
+    enabled: yes
+
+- name: Create PostgreSQL databases and users
+  become_user: postgres
+  postgresql_db:
+    name: "{{ item.name }}"
+    owner: vagrant
+  loop:
+    - { name: all }
+    - { name: dev }
+    - { name: stage }
+    - { name: prod }

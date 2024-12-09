@@ -1,0 +1,5 @@
+[gitlab]
+gitlab_server ansible_host=172.16.104.133 ansible_user=valerie ansible_ssh_private_key_file=~/.ssh/id_rsa
+
+[postgre]
+postgre_server ansible_host=172.16.104.135 ansible_user=valerie ansible_ssh_private_key_file=~/.ssh/id_rsa
